@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.1</title>
+    <script>
+        function validar_matricula(matricula) {
+            if (!isNaN(matricula)) {
+                return false;
+            }
+            if (matricula.length != 6) {
+                return false;
+            }
+            for (let i = 0; i < matricula.length; i++) {
+                if (i != 5) {
+                    if (isNaN(matricula[i])) {
+                        return false;
+                    }
+                } else {
+                    if (!isNaN(matricula[i])) {
+                        return false;
+                    }
+                }
+            }
+            if (matricula[0] % 2 === 0) {
+                return false;
+            }
+            if (matricula[5] != 'P' && matricula[5] != 'S') {
+                return false;
+            }
+            return true
+        }
+        console.log(validar_matricula("32456P")); // true (Empieza por impar, 4 números, termina en P)
+        console.log(validar_matricula("22456P")); // false (Empieza por par)
+        console.log(validar_matricula("32456X")); // false (La letra no es P ni S)
+        console.log(validar_matricula("3a456P")); // false (El segundo no es un número)
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

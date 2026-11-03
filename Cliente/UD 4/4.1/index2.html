@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.1</title>
+    <script>
+        function validar_telefono(telefono) {
+            let textoTelefono = telefono.toString();
+            if (textoTelefono.length != 9) {
+                return false;
+            }
+            if (textoTelefono[0] != 8 && textoTelefono[0] != 9) {
+                return false;
+            }
+            for (let i = 0; i < textoTelefono.length; i++) {
+                if (isNaN(textoTelefono[i]) || textoTelefono[i] < 0) {
+                    return false;
+                }
+            }
+            if (textoTelefono[1] == 0 && textoTelefono[2] == 0) {
+                return false;
+            }
+            return true;
+        }
+        // Pruebas
+        console.log(validar_telefono(912345678)); // true
+        console.log(validar_telefono(900345678)); // false (tiene dos ceros en la 2 y 3 posición)
+        console.log(validar_telefono(91234567));  // false (tiene 8 dígitos en lugar de 9)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
