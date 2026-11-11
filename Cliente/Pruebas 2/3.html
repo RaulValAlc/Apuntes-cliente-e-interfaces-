@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="3.js"></script>
-    <title>Ejercicio prueba 3</title>
+    <title>Examen Práctico - Control de Inventario</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        .campo { margin-bottom: 12px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #333; color: white; }
+        .error { color: red; font-weight: bold; }
+        .contenedor { max-width: 700px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    </style>
 </head>
 <body>
-    
-    
 
+    <div class="contenedor">
+        <h2>Gestión de Stock de Productos</h2>
+        
+        <!-- Formulario sin preventDefault (botones tipo button) -->
+        <form id="formInventario">
+            <div class="campo">
+                <label>Nombre del Producto:</label><br>
+                <input type="text" id="nombreProd" style="width: 100%; padding: 6px;">
+            </div>
+            <div class="campo">
+                <label>Precio Unitario (€):</label><br>
+                <input type="number" id="precioProd" step="0.01" style="width: 100%; padding: 6px;">
+            </div>
+            <div class="campo">
+                <label>Stock en Unidades:</label><br>
+                <input type="number" id="stockProd" style="width: 100%; padding: 6px;">
+            </div>
+
+            <button type="button" onclick="agregarProducto()" style="padding: 8px 15px; background: #007BFF; color: white; border: none; cursor: pointer;">Añadir Producto</button>
+            <button type="button" onclick="vaciarInventario()" style="padding: 8px 15px; background: #dc3545; color: white; border: none; cursor: pointer;">Vaciar Almacén</button>
+        </form>
+
+        <p id="mensajeError" class="error"></p>
+
+        <!-- Tabla para inserción dinámica -->
+        <h3>Listado de Artículos</h3>
+        <table id="tablaInventario">
+            <thead>
+                <tr>
+                    <th>ID Ref</th>
+                    <th>Producto</th>
+                    <th>Stock</th>
+                    <th>Precio + IVA (21%)</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaInventario">
+                <!-- Las filas se insertarán aquí con insertRow e insertCell -->
+            </tbody>
+        </table>
+
+        <h3>Estadísticas del Almacén</h3>
+        <p id="infoEstadisticas">Total de productos registrados: 0</p>
+    </div>
+
+    <!-- Enlace a tu archivo JavaScript -->
+    <script defer src="3.js"></script>
 </body>
 </html>

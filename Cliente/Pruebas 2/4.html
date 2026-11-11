@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Práctico - Inscripción de Corredores</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f6f9; }
+        .campo { margin-bottom: 12px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #004085; color: white; }
+        .error { color: red; font-weight: bold; }
+        .contenedor { max-width: 700px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin: auto; }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h2>Inscripción - Carrera Popular</h2>
+        
+        <!-- Formulario sin preventDefault (botones tipo button) -->
+        <form id="formInscripcion">
+            <div class="campo">
+                <label>Nombre y Apellidos:</label><br>
+                <input type="text" id="nombreCorredor" style="width: 100%; padding: 6px;">
+            </div>
+            <div class="campo">
+                <label>Edad:</label><br>
+                <input type="number" id="edadCorredor" style="width: 100%; padding: 6px;">
+            </div>
+
+            <button type="button" onclick="inscribirCorredor()" style="padding: 8px 15px; background: #28a745; color: white; border: none; cursor: pointer; border-radius: 4px;">Inscribir Corredor</button>
+            <button type="button" onclick="resetearInscripciones()" style="padding: 8px 15px; background: #dc3545; color: white; border: none; cursor: pointer; border-radius: 4px;">Vaciar Lista</button>
+        </form>
+
+        <p id="mensajeError" class="error"></p>
+
+        <!-- Tabla para inserción dinámica -->
+        <h3>Listado de Atletas Inscritos</h3>
+        <table id="tablaInscritos">
+            <thead>
+                <tr>
+                    <th>Dorsal</th>
+                    <th>Atleta</th>
+                    <th>Edad</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaInscritos">
+                <!-- Las filas se insertarán aquí con insertRow e insertCell -->
+            </tbody>
+        </table>
+
+        <h3>Estadísticas de Participación</h3>
+        <p id="infoEstadisticas">Total de corredores inscritos: 0</p>
+    </div>
+
+    <!-- Enlace a tu archivo JavaScript -->
+    <script defer src="carrera.js"></script>
+</body>
+</html>

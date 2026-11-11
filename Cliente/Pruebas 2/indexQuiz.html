@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuestionario condicional</title>
+    <script defer src="quiz.js"></script>
+</head>
+<body>
+
+    <!-- Paso 1: Validación previa -->
+    <div id="seccionAcceso">
+        <h3>Introduce la contraseña o respuesta clave para acceder:</h3>
+        <input type="text" id="respuestaClave" placeholder="Escribe aquí...">
+        <button type="button" id="btnValidar">Comprobar y Acceder</button>
+        <p id="errorAcceso" style="color: red;"></p>
+    </div>
+
+    <!-- Paso 2: El cuestionario (inicialmente oculto) -->
+    <div id="cuestionarioPrincipal" style="display: none;">
+        <h2>¡Acceso concedido! Cuestionario UD 3:</h2>
+        <form id="quizForm">
+            <label>1. ¿Qué devuelve typeof null?</label><br>
+            <input type="text" id="p1"><br><br>
+            <button type="button" id="btnEnviarQuiz">Enviar Cuestionario</button>
+        </form>
+    </div>
+
+</body>
+</html>

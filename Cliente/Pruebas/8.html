@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Abonados de Zaragoza</title>
+    <!-- Enlace a tu archivo JavaScript con defer para que cargue tras el DOM -->
+    <script defer src="8.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sistema de Registro - Abonados de Zaragoza</h2>
+        
+        <form id="registroForm">
+            <!-- Nombre completo -->
+            <div class="form-control">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" placeholder="Ej. Ana Pérez">
+            </div>
+
+            <!-- Teléfono (Debe empezar por 976 y tener 9 dígitos) -->
+            <div class="form-control">
+                <label for="telefono">Teléfono de contacto:</label>
+                <input type="text" id="telefono" placeholder="Ej. 976123456" maxlength="9">
+            </div>
+
+            <!-- Código Postal (Debe empezar por 50) -->
+            <div class="form-control">!
+                <label for="cp">Código Postal:</label>
+                <input type="text" id="cp" placeholder="Ej. 50001" maxlength="5">
+            </div>
+
+            <!-- Condiciones comerciales (Booleano) -->
+            <div class="form-control checkbox-control">
+                <input type="checkbox" id="condiciones">
+                <label for="condiciones">Acepto las condiciones comerciales</label>
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="button" onclick="validarAbonado()">Registrar Abonado</button>
+        </form>
+
+        <!-- Contenedores para mensajes de error y resultados -->
+        <div id="errores" class="error-box"></div>
+        <div id="resultado" class="result-box"></div>
+    </div>
+
+</body>
+</html>
